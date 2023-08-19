@@ -11,11 +11,11 @@ from langchain.callbacks import get_openai_callback
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Ask your PDF")
-    st.header("Ask your PDF 💬")
+    st.set_page_config(page_title="Demandez votre PDF")
+    st.header("Demandez votre PDF 💬")
     
     # upload file
-    pdf = st.file_uploader("Upload your PDF", type="pdf")
+    pdf = st.file_uploader("Téléchargez votre PDF", type="pdf")
     
     # extract the text
     if pdf is not None:
