@@ -11,11 +11,11 @@ from langchain.callbacks import get_openai_callback
 
 def main():
     load_dotenv()
-    st.set_page_config(page_title="Demandez votre PDF")
-    st.header("Demandez votre PDF 💬")
+    st.set_page_config(page_title="Fragen sie ihre PDF")
+    st.header("Fragen sie ihre PDF 💬")
     
     # upload file
-    pdf = st.file_uploader("Téléchargez votre PDF", type="pdf")
+    pdf = st.file_uploader("Laden sie ihre PDF hoch.", type="pdf")
     
     # extract the text
     if pdf is not None:
@@ -38,7 +38,7 @@ def main():
       knowledge_base = FAISS.from_texts(chunks, embeddings)
       
       # show user input
-      user_question = st.text_input("Ask a question about your PDF:")
+      user_question = st.text_input("Fragen sie Fragen zu ihrer PDF:")
       if user_question:
         docs = knowledge_base.similarity_search(user_question)
         
